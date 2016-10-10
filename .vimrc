@@ -1,3 +1,4 @@
+autocmd vimenter * NERDTree
 "   This is the personal .vimrc file of Nickson Kaigi. 
 "   While much of it is beneficial for general use, I would
 "   recommend picking out the parts you want and understand,
@@ -28,10 +29,15 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'moll/vim-node'
+Plugin 'valloric/youcompleteme'
 Plugin 'mxw/vim-jsx'
 Plugin 'c.vim'
+Plugin 'raimondi/delimitmate'
+Plugin 'terryma/vim-multiple-cursors'
+
 " Plugins
 
 
@@ -52,9 +58,9 @@ set nu                          "show line numbers
 
 set expandtab                   "use spaces instead of tabs
 
-set tabstop=4                   "insert 4 spaces whenever the tab key is pressed
+set tabstop=2                   "insert 2 spaces whenever the tab key is pressed
 
-set shiftwidth=4                "set indentation to 4 spaces
+set shiftwidth=2                "set indentation to 2 spaces
 
 set hlsearch                    "highlight search terms
 
@@ -74,6 +80,13 @@ set noswapfile                  " do not write annoying intermediate swap files,
                                 "    who did ever restore from swap files
                                 "    anyway?
                                 "    https://github.com/nvie/vimrc/blob/master/vimrc#L141
+
+
+
+set fdm=indent                  "set foldmethod 
+
+let mapleader=","
+set timeout timeoutlen=1500
 
 
 set ttimeoutlen=50              "Solves: there is a pause when leaving insert mode
@@ -115,5 +128,35 @@ colorscheme solarized
 "nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-t> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+
 "VIM-JAVASCRIPT
 let g:javascript_plugin_jsdoc = 1
+
+
+
+"nerd commenter
+" Add spaces after comment delimiters by default
+ let g:NERDSpaceDelims = 1
+"
+" " Use compact syntax for prettified multi-line comments
+ let g:NERDCompactSexyComs = 1
+"
+" " Align line-wise comment delimiters flush left instead of following code
+" indentation
+ let g:NERDDefaultAlign = 'left'
+"
+" " Set a language to use its alternate delimiters by default
+ let g:NERDAltDelims_java = 1
+"
+" " Add your own custom formats or override the defaults
+ let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+"
+" " Allow commenting and inverting empty lines (useful when commenting a region)
+ let g:NERDCommentEmptyLines = 1
+"
+" " Enable trimming of trailing whitespace when uncommenting
+ let g:NERDTrimTrailingWhitespace = 1
