@@ -37,7 +37,10 @@ Plugin 'mxw/vim-jsx'
 Plugin 'c.vim'
 Plugin 'raimondi/delimitmate'
 Plugin 'terryma/vim-multiple-cursors'
-
+Plugin 'myusuf3/numbers.vim'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'xuyuanp/nerdtree-git-plugin'
+Plugin 'mileszs/ack.vim'
 " Plugins
 
 
@@ -130,6 +133,19 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-t> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" 显示行号
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+" " 是否显示隐藏文件
+let NERDTreeShowHidden=1
+" " 设置宽度
+let NERDTreeWinSize=31
+" " 在终端启动vim时，共享NERDTree
+let g:nerdtree_tabs_open_on_console_startup=1
+" " 忽略一下文件的显示
+let NERDTreeIgnore=['\.pyc','\~$','\.swp']
+" " 显示书签列表
+let NERDTreeShowBookmarks=1
 
 
 
@@ -160,3 +176,24 @@ let g:javascript_plugin_jsdoc = 1
 "
 " " Enable trimming of trailing whitespace when uncommenting
  let g:NERDTrimTrailingWhitespace = 1
+
+
+"Number
+let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
+
+
+" nerdtree-git-plugin
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
+
+" ack 全局搜索 快捷键
+:map <Leader>f :Ack -i
