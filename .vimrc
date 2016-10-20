@@ -41,6 +41,8 @@ Plugin 'myusuf3/numbers.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'mileszs/ack.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'suan/vim-instant-markdown'
 " Plugins
 
 
@@ -100,6 +102,10 @@ set splitright                  " Vertical splits open to the right of the curre
 
 set wildmode=longest,list       " Pressing <Tab> shows command suggestions similar to pressing <Tab>
                                 " in bash 
+
+au BufNewFile,BufRead *.ejs set filetype=html  " syntax highlight for .ejs
+
+
 
 " Mappings to traverse buffer list 
 nnoremap <silent> [b :bprevious<CR>
@@ -197,3 +203,5 @@ let g:NERDTreeIndicatorMapCustom = {
 
 " ack 全局搜索 快捷键
 :map <Leader>f :Ack -i
+
+let g:user_emmet_leader_key='<C-e>'
