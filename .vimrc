@@ -43,6 +43,9 @@ Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'mileszs/ack.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'heavenshell/vim-jsdoc'
 " Plugins
 
 
@@ -89,6 +92,7 @@ set noswapfile                  " do not write annoying intermediate swap files,
 
 
 set fdm=indent                  "set foldmethod 
+set foldlevelstart=99                "打开文件时默认不折叠代码
 
 let mapleader=","
 set timeout timeoutlen=1500
@@ -204,4 +208,11 @@ let g:NERDTreeIndicatorMapCustom = {
 " ack 全局搜索 快捷键
 :map <Leader>f :Ack -i
 
+" emmet 快捷键
 let g:user_emmet_leader_key='<C-e>'
+
+
+
+" JsDoc 设置keymap
+nmap <silent> <C-l> <Plug>(jsdoc)
+let g:jsdoc_enable_es6=1
