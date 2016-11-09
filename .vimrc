@@ -46,6 +46,7 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'heavenshell/vim-jsdoc'
+Plugin 'Yggdroot/indentLine'
 " Plugins
 
 
@@ -77,6 +78,7 @@ set ic                          "Ignore Case during searches
 set autoindent                  "start new line at the same indentation level
 
 syntax enable                   "syntax highlighting
+syntax on                       " 允许用指定语法高亮配色方案替换默认方案
 
 set cmdheight=1                 "The commandbar height
 
@@ -88,7 +90,9 @@ set noswapfile                  " do not write annoying intermediate swap files,
                                 "    who did ever restore from swap files
                                 "    anyway?
                                 "    https://github.com/nvie/vimrc/blob/master/vimrc#L141
+set cursorline                  "    高亮显示当前行
 
+set cursorcolumn                "    高亮显示当前列
 
 
 set fdm=indent                  "set foldmethod 
@@ -216,3 +220,7 @@ let g:user_emmet_leader_key='<C-e>'
 " JsDoc 设置keymap
 nmap <silent> <C-l> <Plug>(jsdoc)
 let g:jsdoc_enable_es6=1
+
+
+" indentLine seting
+let g:indentLine_setColors = 0
