@@ -90,9 +90,9 @@ set noswapfile                  " do not write annoying intermediate swap files,
                                 "    who did ever restore from swap files
                                 "    anyway?
                                 "    https://github.com/nvie/vimrc/blob/master/vimrc#L141
-set cursorline                  "    高亮显示当前行
+" set cursorline                  "    高亮显示当前行
 
-set cursorcolumn                "    高亮显示当前列
+" set cursorcolumn                "    高亮显示当前列
 
 
 set fdm=indent                  "set foldmethod 
