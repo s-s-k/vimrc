@@ -47,7 +47,6 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'Yggdroot/indentLine'
-Plugin 'chiel92/vim-autoformat'
 " Plugins
 
 
