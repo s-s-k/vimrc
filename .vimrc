@@ -47,6 +47,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'Yggdroot/indentLine'
+Plugin 'vim-scripts/Conque-GDB'
 " Plugins
 
 
@@ -90,7 +91,7 @@ set noswapfile                  " do not write annoying intermediate swap files,
                                 "    who did ever restore from swap files
                                 "    anyway?
                                 "    https://github.com/nvie/vimrc/blob/master/vimrc#L141
-" set cursorline                  "    高亮显示当前行
+set cursorline                  "    高亮显示当前行
 
 " set cursorcolumn                "    高亮显示当前列
 
@@ -142,6 +143,8 @@ set t_Co=256
 syntax enable
 set background=dark
 colorscheme solarized
+
+
 "nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -224,3 +227,15 @@ let g:jsdoc_enable_es6=1
 
 " indentLine seting
 let g:indentLine_setColors = 0
+
+" easymotion 
+map / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map n <Plug>(easymotion-next)
+map N <Plug>(easymotion-prev)
+
+" youcompleteme
+let g:ycm_global_ycm_extra_conf = '/home/ssk/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py' 
+
+" tagbar 
+nmap <F8> : TagbarToggle<CR>
