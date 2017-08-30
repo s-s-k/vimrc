@@ -235,7 +235,7 @@ map n <Plug>(easymotion-next)
 map N <Plug>(easymotion-prev)
 
 " youcompleteme
-let g:ycm_global_ycm_extra_conf = '/home/ssk/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py' 
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py' 
 
 " tagbar 
 nmap <F8> : TagbarToggle<CR>
