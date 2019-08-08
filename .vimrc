@@ -1,57 +1,35 @@
-autocmd vimenter * NERDTree
-"   This is the personal .vimrc file of Nickson Kaigi. 
-"   While much of it is beneficial for general use, I would
-"   recommend picking out the parts you want and understand,
-"   as I have done from other notable vim purists
-"
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
 
-set nocompatible                "Use Vim settings, rather than Vi settings
-                                "Be IMproved
+Plug 'junegunn/vim-easy-align'
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'altercation/vim-colors-solarized'
+Plug 'pangloss/vim-javascript'
+Plug 'mattn/emmet-vim'
+Plug 'elzr/vim-json'
+Plug 'kien/ctrlp.vim'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdcommenter'
+Plug 'plasticboy/vim-markdown'
+Plug 'moll/vim-node'
+Plug 'raimondi/delimitmate'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'myusuf3/numbers.vim'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'mileszs/ack.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'easymotion/vim-easymotion'
 
-filetype off                    "required!
+" Initialize plugin system
+call plug#end()
 
-" I use Vundle https://github.com/gmarik/Vundle.vim as my
-" preferred plugin manager.... never got the hang of
-" vim-pathogen (no offence to the pathogen community)
-
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Let vundle manage itself
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mattn/emmet-vim'
-Plugin 'elzr/vim-json'
-Plugin 'kien/ctrlp.vim'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'moll/vim-node'
-Plugin 'valloric/youcompleteme'
-Plugin 'mxw/vim-jsx'
-Plugin 'c.vim'
-Plugin 'raimondi/delimitmate'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'myusuf3/numbers.vim'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'xuyuanp/nerdtree-git-plugin'
-Plugin 'mileszs/ack.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'heavenshell/vim-jsdoc'
-Plugin 'Yggdroot/indentLine'
-Plugin 'vim-scripts/Conque-GDB'
-" Plugins
-
-
-call vundle#end()               " required
 filetype plugin indent on       "required!
 
 set backspace=indent,eol,start  "allow backspacing over everything in insert mode
@@ -147,9 +125,7 @@ colorscheme solarized
 
 "nerdtree
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-t> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " 显示行号
 let NERDTreeShowLineNumbers=1
 let NERDTreeAutoCenter=1
@@ -163,12 +139,6 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let NERDTreeIgnore=['\.pyc','\~$','\.swp']
 " " 显示书签列表
 let NERDTreeShowBookmarks=1
-
-
-
-"VIM-JAVASCRIPT
-let g:javascript_plugin_jsdoc = 1
-
 
 
 "nerd commenter
@@ -219,12 +189,6 @@ let g:NERDTreeIndicatorMapCustom = {
 let g:user_emmet_leader_key='<C-e>'
 
 
-
-" JsDoc 设置keymap
-nmap <silent> <C-l> <Plug>(jsdoc)
-let g:jsdoc_enable_es6=1
-
-
 " indentLine seting
 let g:indentLine_setColors = 0
 
@@ -234,8 +198,7 @@ omap / <Plug>(easymotion-tn)
 map n <Plug>(easymotion-next)
 map N <Plug>(easymotion-prev)
 
-" youcompleteme
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py' 
-
 " tagbar 
 nmap <F8> : TagbarToggle<CR>
+
+
