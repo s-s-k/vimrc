@@ -7,7 +7,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'altercation/vim-colors-solarized'
 Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
 Plug 'elzr/vim-json'
@@ -26,6 +25,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'mileszs/ack.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'dracula/vim'
 
 " Initialize plugin system
 call plug#end()
@@ -117,10 +117,8 @@ set laststatus=2
 
 " End of airline stuff
 
-set t_Co=256
 syntax enable
-set background=dark
-colorscheme solarized
+color dracula
 
 
 "nerdtree
